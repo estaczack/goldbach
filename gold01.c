@@ -3,6 +3,8 @@
 
 #include "g.h"
 #include "geven.h"
+#include "showeven.h"
+#include "showodd.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,9 +15,14 @@ int main(int argc, char *argv[])
     {
         gn = g(n);
         ge = geven(n);
+        printf("\n\n====================\n\n");
         if (ge)
         {
-            printf("%d => %d\n", n, gn);
+            printf("%d => %d (even)\n", n, gn);
+            showeven(n);
+        } else {
+            printf("%d => %d (odd)\n", n, gn);
+            showodd(n);
         }
     }
 }
