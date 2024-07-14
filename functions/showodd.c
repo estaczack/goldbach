@@ -2,6 +2,7 @@
 
 #include "g.h"
 #include "s.h"
+#include "isprime.h"
 
 void showodd(int n)
 {
@@ -10,5 +11,9 @@ void showodd(int n)
     for (int i = 0; i <= gn2; i++)
     {
         printf("\ns(%2d) = %d\t|\ts(%2d) = %d", i, s(i), gn - i, s(gn - i));
+        if (isprime(s(i)) && isprime(s(gn - i)))
+        {
+            printf(" *");
+        }
     }
 }
