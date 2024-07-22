@@ -3,7 +3,7 @@
 #include <stdbool.h>
 
 #include "g.h"
-#include "gneven.h"
+#include "iseven.h"
 #include "s.h"
 #include "showeven.h"
 #include "showodd.h"
@@ -17,7 +17,7 @@ main (int argc, char *argv[])
   printf ("g(%d) = %3d\n", n, g (n));
   printf ("s(g(%d)) = %3d\n", n, s (g (n)));
   printf ("\n====================\n");
-  if (gneven (n))
+  if (IsEven (g (n)))
     {
       showeven (n);
     }
