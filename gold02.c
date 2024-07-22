@@ -1,38 +1,28 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
 
 #include "g.h"
 #include "gneven.h"
+#include "s.h"
 #include "showeven.h"
 #include "showodd.h"
 
 int
 main (int argc, char *argv[])
 {
-  int gn = 0;
-  bool gne = false;
+  int n = atoi (argv[1]);
 
-  printf ("\n\nE = (");
-  for (int n = 6; n < 100; n = n + 2)
+  printf ("n = %3d\n", n);
+  printf ("g(%d) = %3d\n", n, g (n));
+  printf ("s(g(%d)) = %3d\n", n, s (g (n)));
+  printf ("\n====================\n");
+  if (gneven (n))
     {
-      gn = g (n);
-      gne = gneven (n);
-      if (gne)
-	{
-	  printf ("%d, ", n);
-	}
+      showeven (n);
     }
-  printf ("...)\n\n");
-
-  printf ("O = (");
-  for (int n = 6; n < 100; n = n + 2)
+  else
     {
-      gn = g (n);
-      gne = gneven (n);
-      if (!gne)
-	{
-	  printf ("%d, ", n);
-	}
+      showodd (n);
     }
-  printf ("...)\n\n");
 }
