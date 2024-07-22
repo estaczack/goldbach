@@ -2,40 +2,59 @@
 #include <stdbool.h>
 
 #include "g.h"
-#include "geven.h"
+#include "gneven.h"
 #include "isprime.h"
+#include "s.h"
 #include "showeven.h"
 #include "showodd.h"
+#include "typecolors.h"
 
 int
 main (int argc, char *argv[])
 {
   int gn = 0;
-  bool ge = false;
+  bool gne = false;
+  int sgn = 0;
+  int sgn2 = 0;
   int j = 0;
 
-  for (int n = 6; n < 998; n = n + 2)
+  for (int n = 6; n < 502; n = n + 2)
     {
-      gn = g (n);
-      ge = geven (n);
+      printf ("%s%3d", RESET_COLOR, n);
 
-      if (ge)
+      gn = g (n);
+      gne = gneven (n);
+      sgn = s (gn);
+
+      if (gne)
 	{
-	  if (isprime (gn / 2))
-	    {
-	      printf ("\x1b[32m%d\x1b[0m\t", n);
-	    }
-	  else
-	    {
-	      printf ("\x1b[31m%d\x1b[0m\t", n);
-	    }
+	  sgn2 = s (gn / 2);
 	}
       else
 	{
-	  printf ("\x1b[36m%d\x1b[0m\t", n);
+	  sgn2 = 0;
 	}
+
+      if (gne)
+	{
+	  printf ("%s%4d", G_N_EVEN, gn);
+	}
+      else
+	{
+	  printf ("%s%4d", G_N_ODD, gn);
+	}
+
+      if (isprime (sgn))
+	{
+	  printf ("%s%4d\t", S_G_N_PRIME, sgn);
+	}
+      else
+	{
+	  printf ("%s%4d\t", S_G_N_COMPOSITE, sgn);
+	}
+
       j = j + 1;
-      if ((j % 16) == 0)
+      if ((j % 8) == 0)
 	{
 	  printf ("\n");
 	}

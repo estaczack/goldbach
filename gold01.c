@@ -2,7 +2,7 @@
 #include <stdbool.h>
 
 #include "g.h"
-#include "geven.h"
+#include "gneven.h"
 #include "showeven.h"
 #include "showodd.h"
 
@@ -10,14 +10,14 @@ int
 main (int argc, char *argv[])
 {
   int gn = 0;
-  bool ge = false;
+  bool gne = false;
 
-  for (int n = 6; n < 60; n = n + 2)
+  for (int n = 6; n < 500; n = n + 2)
     {
       gn = g (n);
-      ge = geven (n);
+      gne = gneven (n);
       printf ("\n\n====================\n\n");
-      if (ge)
+      if (gne)
 	{
 	  printf ("%d => %d (even)\n", n, gn);
 	  showeven (n);

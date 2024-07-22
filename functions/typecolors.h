@@ -2,43 +2,18 @@
 #define __TYPECOLORS_H__
 
 
-#define G_IS_EVEN "\x1
+#define RESET_COLOR      "\x1b[0m"
 
+#define G_N_EVEN         "\x1b[31m"
+#define G_N_ODD          "\x1b[32m"
 
-#include "showodd.h"
+#define G_N_PRIME        "\x1b[23m"
+#define G_N_COMPOSITE    "\x1b[21m"
 
-int
-main (int argc, char *argv[])
-{
-  int gn = 0;
-  bool ge = false;
-  int j = 0;
+#define S_G_N_PRIME      "\x1b[33m"
+#define S_G_N_COMPOSITE  "\x1b[34m"
 
-  for (int n = 6; n < 998; n = n + 2)
-    {
-      gn = g (n);
-      ge = geven (n);
+#define S_G_N2_PRIME     "\x1b[35m"
+#define S_G_N2_COMPOSITE "\x1b[36m"
 
-      if (ge)
-	{
-	  if (isprime (gn / 2))
-	    {
-	      printf ("\x1b[32m%d\x1b[0m\t", n);
-	    }
-	  else
-	    {
-	      printf ("\x1b[31m%d\x1b[0m\t", n);
-	    }
-	}
-      else
-	{
-	  printf ("\x1b[36m%d\x1b[0m\t", n);
-	}
-      j = j + 1;
-      if ((j % 16) == 0)
-	{
-	  printf ("\n");
-	}
-    }
-  printf ("\n\n");
-}
+#endif

@@ -2,7 +2,7 @@
 
 #include "g.h"
 
-bool geven(int n)
+bool gneven(int n)
 {
     return ((g(n) % 2) == 0);
 }
