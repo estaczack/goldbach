@@ -1,4 +1,8 @@
+const torna_positivo = require("./torna_positivo");
+
 const MDC = function (a, b) {
+  a = torna_positivo (a);
+  b = torna_positivo (b);
   min = 0;
   max = 0;
   res = 0;
@@ -28,4 +32,4 @@ const MDC = function (a, b) {
   return max;
 }
 
-export default MDC;
+module.exports = MDC;
