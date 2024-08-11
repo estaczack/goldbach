@@ -12,7 +12,7 @@ DivN (int n)
     {
       if (j > 19)
 	{
-	  printf ("                     | ");
+	  printf ("  |  ");
 	  j = 0;
 	}
       if (((n % i) == 0) && (isprime (i)))
@@ -21,5 +21,4 @@ DivN (int n)
 	  j++;
 	}
     }
-  printf ("\n");
 }

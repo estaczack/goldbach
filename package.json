@@ -1,0 +1,11 @@
+{
+  "name": "goldbach",
+  "version": "1.0.0",
+  "description": "Provando a Conjectura de Goldbach",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Ed de Almeida",
+  "license": "ISC"
+}
